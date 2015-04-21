@@ -9,7 +9,7 @@ Wordpress' [XML-RPC API](http://codex.wordpress.org/XML-RPC_WordPress_API) can b
 * string `username`
 * string `password`
 * int `post_id`
-* array `fields`: Optional. List of meta fields to return. If `null` then all fields will be teturned
+* array `fields`: Optional. List of meta fields to return. If `null` then all fields will be returned
 
 ### Returns
 * array of structs
