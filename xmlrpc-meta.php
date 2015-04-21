@@ -23,7 +23,7 @@ function get_meta($args) {
 
 	if ($content) {
 		foreach ($content['custom_fields'] as $meta) {
-			$return[] = get_post_meta($postID, $meta, TRUE);
+			$return[$meta] = get_post_meta($postID, $meta, TRUE);
 		}
 	} else {
 		$return = get_post_meta($postID);
