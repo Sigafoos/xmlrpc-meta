@@ -43,7 +43,11 @@ function edit_meta($args) {
 
 	if (!$user = $wp_xmlrpc_server->login($username, $password) || !$args[3] || !$args[4]) return $wp_xmlrpc_server->error;
 
-	return "um this doesn't do anything yet";
+	foreach ($content['custom_fields'] as $key=>$value) {
+		add_post_meta( $postID, $key, $value, TRUE ) || update_post_meta( $postID, $key, $value );
+	}
+
+	return TRUE;
 }
 
 function add_new_xmlrpc_methods($methods) {
