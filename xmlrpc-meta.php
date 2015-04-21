@@ -43,8 +43,8 @@ function edit_meta($args) {
 
 	if (!$user = $wp_xmlrpc_server->login($username, $password) || !$args[3] || !$args[4]) return $wp_xmlrpc_server->error;
 
-	foreach ($content['custom_fields'] as $key=>$value) {
-		add_post_meta( $postID, $key, $value, TRUE ) || update_post_meta( $postID, $key, $value );
+	foreach ($content['custom_fields'] as $custom) {
+		add_post_meta( $postID, $custom['key'], $custom['value'], TRUE ) || update_post_meta( $postID, $custom['key'], $custom['value'] );
 	}
 
 	return TRUE;
